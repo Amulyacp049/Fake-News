@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Visualization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #ffffff, #f0f4f8);
+            margin: 0;
+            padding: 0;
+            animation: fadeInBody 1s ease-in-out;
+        }
+
+        header {
+            background: linear-gradient(90deg, #457b9d, #2a9d8f);
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            animation: slideInHeader 1.5s ease-in-out;
+        }
+
+        .container {
+            margin: 40px auto;
+            padding: 30px;
+            max-width: 1000px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeInContainer 1.5s ease-in-out;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h2:nth-child(1) { color: #e63946; } /* Red */
+        h2:nth-child(2) { color: #457b9d; } /* Blue */
+        h2:nth-child(3) { color: #1d3557; } /* Dark Blue */
+        h2:nth-child(4) { color: #2a9d8f; } /* Teal */
+        h2:nth-child(5) { color: #e76f51; } /* Coral */
+        h2:nth-child(6) { color: #f4a261; } /* Orange */
+        h2:nth-child(7) { color: #264653; } /* Dark Green */
+
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(90deg, #2a9d8f, #264653);
+            color: #fff;
+            font-size: 1rem;
+            margin-top: 50px;
+            animation: fadeInFooter 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInBody {
+            from {
+                background-color: #f0f4f8;
+            }
+            to {
+                background-color: #ffffff;
+            }
+        }
+
+        @keyframes slideInHeader {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInContainer {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInFooter {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Fake News Detection – Visual Analysis
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Word Cloud</h2>
+            <img src="/wordcloud" alt="Word Cloud">
+            <p>This word cloud represents the <strong>most frequently used words</strong> in the news titles.</p>
+            <p>It helps identify common themes and keywords in the dataset.</p>
+        </div>
+
+        <div class="container">
+            <h2>Time Series Analysis</h2>
+            <img src="/timeseries" alt="Time Series">
+            <p>This graph shows the <strong>monthly trend</strong> of article publications over time.</p>
+            <p>It highlights periods of increased or decreased activity.</p>
+        </div>
+
+        <div class="container">
+            <h2>Correlation Heatmap</h2>
+            <img src="/heatmap" alt="Heatmap">
+            <p>The heatmap displays the <strong>correlation</strong> between numeric features.</p>
+            <p>It helps identify relationships between word count, character count, and title length.</p>
+        </div>
+
+        <div class="container">
+            <h2>Pie Chart by Subject</h2>
+            <img src="/piechart" alt="Pie Chart">
+            <p>This pie chart shows the <strong>distribution</strong> of news articles by subject category.</p>
+            <p>It provides an overview of the dataset's composition.</p>
+        </div>
+
+        <div class="container">
+            <h2>Bar Plot</h2>
+            <img src="/barplot" alt="Bar Plot">
+            <p>The bar plot compares the <strong>word counts</strong> across different subjects.</p>
+            <p>It highlights which subjects have longer or shorter articles on average.</p>
+        </div>
+
+        <div class="container">
+            <h2>Scatter Plot</h2>
+            <img src="/scatterplot" alt="Scatter Plot">
+            <p>This scatter plot shows the <strong>relationship</strong> between word count and character count.</p>
+            <p>It helps identify patterns or outliers in the dataset.</p>
+        </div>
+
+        <div class="container">
+            <h2>Pair Plot</h2>
+            <img src="/pairplot" alt="Pair Plot">
+            <p>The pair plot explores the <strong>interactions</strong> between numeric features.</p>
+            <p>It provides a comprehensive view of feature relationships.</p>
+        </div>
+    </main>
+
+    <footer>
+        
+    </footer>
+</body>
+</html>
